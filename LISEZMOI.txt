@@ -1,0 +1,45 @@
+
+Projet DAC - Rémi LHOSTE / Etienne CHAPELLE :
+
+
+Déplacements / Contrôles :
+
+Z : Avancer
+S : Reculer
+Q : Aller à gauche
+D : Aller à droite
+SHIFT : Accélérer
+P : Ouvrir Menu Paramètres
+
+Changer d'outils :
+
+Touches numériques de 1 à 6 (outils indiqué en haut à gauche)
+
+
+Outils disponnibles :
+
+Rogner
+Extruder
+Rogner (normalisé)
+Extruder (normalisé)
+Couper
+Déplacer
+
+
+Remarques : 
+
+	- Le plan de l'outils "Couper" peut être incliné dans les deux sens à l'aide des flèches directionnelles.
+	- On utilise aussi les flèches directionnelles pour déplacer l'objet selectionné.
+	- Un freeze de quelques secondes peut se déclencher lorsqu'on coupe le GameObject, il faut juste attendre pour que cela réponde à nouveau.
+	- Après un cut, seule la forme de base peut être modifiée.
+	- La création de Cubes/Sphères est dirigée par les paramètres X, Y, Z et Roundness depuis le Menu Unity. En faisant varier la roudness, on change
+	  l'arrondissement des faces, on peut donc passer d'un cube à une sphère. Pour obtennir une sphère parfaite, la roundess doit correspondre à la
+	  moité de la taille du cube (ex: si le cube fait 100x100x100, la roundness doit être de 50).
+
+
+Explications différences entre les deux modes de rognage / extrude :
+
+Lorsque l'on extrude ou rogne avec la caméra, la déformation s'effectue selon un vecteur qui suit la trajectoire entre le point d'impact du 
+Raycast sur le MeshDeformer, et le centre de l'écran grâce à la fonction ScreenToWorldPoint().
+En revanche, lors d'une déformation normalisée, la déformation suit la direction de la normale à la facette (intérieure ou extérieure), 
+et n'est donc pas influencée par la position de la caméra.
